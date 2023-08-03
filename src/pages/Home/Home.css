@@ -1,0 +1,10 @@
+.Home{
+    height: 1500px;
+}
+.Home-section{
+    margin:20px ;
+}
+.Home-section h3 {
+    color: var(--text-color) !important;
+    margin-bottom: 20px;
+}

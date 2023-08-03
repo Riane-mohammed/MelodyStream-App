@@ -1,0 +1,65 @@
+.music-player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 8px;
+    right: 8px;
+    width: calc(100% - 274px);
+    background-color: var(--sidebar-color);
+    padding: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.music-player img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.music-info {
+    flex: 1;
+    color: var(--text-color);
+}
+
+.music-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.artist {
+    font-size: 14px;
+    margin: 0;
+}
+
+.controls button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 25%;
+}
+.controls button i {
+    color: var(--text-color);
+}
+
+.controls button:hover {
+    background-color: var(--primary-color);
+}
+
+.seek-bar{
+    width: 50%;
+}
+.volume-bar {
+    width: 20%;
+    margin-top: 5px;
+}
+.empty{
+    width: 50px;
+}
+input[type='range'] {
+    width: 100%;
+}

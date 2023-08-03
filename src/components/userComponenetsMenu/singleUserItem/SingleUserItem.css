@@ -1,0 +1,8 @@
+li a:hover{
+    color: var(--sidebar-color) !important;
+    background-color: var(--primary-color)!important;
+}
+
+body.dark li a:hover{
+    color: var(--text-color) !important;
+}

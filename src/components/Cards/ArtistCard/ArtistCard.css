@@ -1,0 +1,36 @@
+.ArtistCard {
+    padding: 20px;
+    width: 205px;
+    height: 282px;
+    border-radius: 20px;
+    background-color: var(--sidebar-color);
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.ArtistCard:hover {
+    translate: 0 -10px;
+}
+
+.ArtistCard-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 15px 0 0 5px;
+}
+
+.ArtistCard-image {
+    min-height: 170px;
+}
+
+.ArtistCard-image img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.ArtistCard-body {
+    margin: 0 0 0 10px;
+    padding: 0;
+    color: var(--text-color);
+    font-size: 15px;
+}

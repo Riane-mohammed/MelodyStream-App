@@ -1,0 +1,13 @@
+.drop-left{
+    left:-110px;
+}
+
+.navbar{
+    background-color: var(--sidebar-color);
+    border-top-left-radius: 20px ;
+    border-top-right-radius: 20px;
+}
+
+.bx{
+    color: var(--text-color);
+}
