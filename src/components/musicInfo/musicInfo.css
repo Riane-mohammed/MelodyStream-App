@@ -1,0 +1,8 @@
+.song-img img{
+    width:50px;
+}
+
+.music-info{
+    font-weight: 600;
+    color: var(--text-color);
+}

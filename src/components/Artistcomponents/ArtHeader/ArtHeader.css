@@ -1,0 +1,26 @@
+.ArtHeader{
+    padding: 80px 50px ;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(228, 233, 247, 1) 50%, var(--primary-color) 100%);
+}
+
+.image {
+    width: 300px;
+}
+
+.image img{
+    max-width: 100%;
+}
+
+.sideContent p,
+.sideContent h1{
+    color: var(--text-color) !important;
+}
+
+.sideContent h1{
+    font-size: 80px;
+}
+.sideContent p{
+    font-size: 20px;
+    font-weight: 500;
+}

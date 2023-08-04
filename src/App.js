@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar';
 import './App.css'
 import Header from './components/Header/Header';
 import Player from './components/Player/Player';
+import ArtistPage from './pages/ArtistPage/ArtistPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <section className="content">
         <Header />
         {/* <Home /> */}
+        <ArtistPage />
         <Player />
       </section>
     </>
