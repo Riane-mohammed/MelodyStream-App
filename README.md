@@ -1,13 +1,12 @@
 # MelodyStream - Dynamic Music Streaming Platform
 
-MelodyStream is a dynamic web-based music streaming platform built using React.js and the Spotify API.It offers an immersive and personalized music listening experience, providing users with a vast library of songs, personalized recommendations, curated playlists, social sharing features, and interactive functionalities.
+MelodyStream is a dynamic web-based music streaming platform built using React.js.It offers an immersive and personalized music listening experience, providing users with a vast library of songs, personalized recommendations, curated playlists, social sharing features, and interactive functionalities.
 
 //
 
 ## Features
 
 - User Registration and Authentication
-- Music Database Integration via Spotify API
 - Seamless Audio Streaming and Playback
 - Personalized Song Recommendations
 - Curated Playlists and Collections
@@ -36,7 +35,6 @@ MelodyStream is a dynamic web-based music streaming platform built using React.j
 ## Technologies Used
 
 - React.js
-- Spotify API
 - HTML5, CSS3
 - PHP (for backend)
 - bootstrap5 
@@ -53,5 +51,4 @@ This project is licensed under the RMR License .
 
 ## Acknowledgements
 
-- Thanks to [Spotify](https://developer.spotify.com/documentation/web-api/) for providing access to their API.
 - This project was developed as part of an internship at [YaneCode Digital].
