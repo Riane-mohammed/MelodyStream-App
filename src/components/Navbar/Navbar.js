@@ -11,7 +11,7 @@ const Navbar = () => {
                     <NavbarSearch />
                     <ul className="menu-links ps-0">
                         <NavbarLink link='Home' icon='bx-home-alt'/>
-                        <NavbarLink link='Explore' icon='bx-time-five'/>
+                        <NavbarLink link='tracks' icon='bx-time-five'/>
                         <NavbarLink link='Recommendations' icon='bx-headphone'/>
                         <NavbarLink link='My Playlists' icon='bxs-playlist'/>
                         <NavbarLink link='Following' icon='bx-user'/>

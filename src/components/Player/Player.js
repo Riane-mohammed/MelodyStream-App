@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
-import music from '../../assets/audio/1.mp3'
-import image from '../../assets/images/1.jpg';
+import music from '../../assets/audios/1.mp3'
+import image from '../../assets/images/music-covers/1.jpg';
 import './Player.css'
 
 const Player = () => {
@@ -44,7 +44,7 @@ const Player = () => {
     return (
         <div className="music-player rounded-bottom">
         <img src={image} alt="Music cover" />
-        <div className="music-info">
+        <div className="music-infoPlayer">
             <p className="music-name">On my way</p>
             <p className="artist">Alan walker</p>
         </div>

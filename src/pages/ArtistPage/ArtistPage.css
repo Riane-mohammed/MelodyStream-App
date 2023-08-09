@@ -1,0 +1,6 @@
+.bottomPage{
+    height: 150px;
+}
+.artist-content h1{
+    color: var(--text-color);
+}

@@ -16,12 +16,12 @@
     --primary-color-light: #F6F5FF;
     --toggle-color: #DDD;
     --text-color: #707070;
+    --text-color-fix: #707070;
+    --gradient-top: #fff;
+    --gradient-middle: #e4e9f7;
+    --gradient-bottom: var(--primary-color);
 
-
-    --tran-03: all 0.2s ease;
-    --tran-03: all 0.3s ease;
-    --tran-04: all 0.3s ease;
-    --tran-05: all 0.3s ease;
+    --tran-01: all 0.2s ease;
 }
 
 body {
@@ -44,6 +44,9 @@ body.dark {
     --primary-color-light: #3a3b3c;
     --toggle-color: #fff;
     --text-color: #ccc;
+    --gradient-top: #242526;
+    --gradient-middle: #cccccc;
+    --gradient-bottom: #e4e9f7;
 }
 
 .content {
@@ -61,4 +64,8 @@ body.dark {
     position: sticky;
     top: 0;
     z-index: 1;
+}
+
+a{
+    text-decoration: none;
 }

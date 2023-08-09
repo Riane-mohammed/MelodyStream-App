@@ -18,7 +18,7 @@
     margin-right: 10px;
 }
 
-.music-info {
+.music-infoPlayer {
     flex: 1;
     color: var(--text-color);
 }

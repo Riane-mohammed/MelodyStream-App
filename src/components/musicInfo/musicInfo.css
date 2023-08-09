@@ -5,4 +5,11 @@
 .music-info{
     font-weight: 600;
     color: var(--text-color);
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.music-info:hover{
+    background-color: var(--primary-color);
 }
