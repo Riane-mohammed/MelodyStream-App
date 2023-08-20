@@ -1,0 +1,50 @@
+.ProfileHeader {
+    padding: 80px 50px;
+    background-color: var(--profile-color);
+    border-top: 1px solid var(--border-color);
+}
+
+.image {
+    width: 300px;
+}
+
+.image img {
+    max-width: 100%;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sideContent p,
+.sideContent h1 {
+    color: var(--text-color-fix) !important;
+}
+
+.sideContent h1 {
+    font-size: 80px;
+}
+
+.sideContent p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.custom-shape-divider-bottom-1691631882 {
+    position: absolute;
+    bottom: 125px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1691631882 svg {
+    position: relative;
+    display: block;
+    width: calc(120% + 1.3px);
+    height: 75px;
+}
+
+.custom-shape-divider-bottom-1691631882 .shape-fill {
+    fill: var(--profile-fill);
+}

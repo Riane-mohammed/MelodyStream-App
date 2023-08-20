@@ -1,0 +1,8 @@
+.background-radial-gradient {
+    background-image: url(../../assets/images/back.jpg);
+}
+
+.bg-glass {
+    background-color: hsla(0, 0%, 100%, 0.4) !important;
+    backdrop-filter: saturate(200%) blur(25px);
+}
