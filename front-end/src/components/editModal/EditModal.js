@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
-import { useStateProvider } from '../../../utils/StateProvider';
 
-function ProfileModal(props) {
-    const { state: { userid }, dispatch } = useStateProvider();
+function EditModal(props) {
     const [image, setImage] = useState(null); 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
+    const [role, setRole] = useState('');
 
     const handleImageChange = (event) => {
         const file = event.target.files[0];
@@ -28,6 +27,10 @@ function ProfileModal(props) {
         setUsername(event.target.value);
     };
 
+    const handleRoleChange = (event) => {
+        setRole(event.target.value);
+    };
+
     const handleSaveChanges = async () => {
         try {
             const formData = new FormData();
@@ -38,7 +41,7 @@ function ProfileModal(props) {
                 formData.append('profileImage', image);
             }
 
-            const response = await axios.put(`http://localhost:8081/users/${userid}`, formData, {
+            const response = await axios.put(`http://localhost:8081/users/${props.selectedUserId}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -67,7 +70,7 @@ function ProfileModal(props) {
             <Modal.Body>
                 <div className='grid grid-cols-12 gap-4 gap-y-3'>
                     <div className='image mx-auto'>
-                        <img src={props.image} style={{ width: '180px', height:'180px' }} />
+                        {/* <img src={`http://localhost:8081/uploads/images/profiles/${props.selectedUserId.profileImage}`} style={{ width: '180px', height:'180px' }} /> */}
                         <input
                             type="file"
                             id="imageInput"
@@ -87,6 +90,22 @@ function ProfileModal(props) {
                             className="form-control mb-3 "
                             placeholder="Username"
                             required />
+                    </div>
+                    <div className="col-span-12 sm:col-span-12">
+                        <label htmlFor="roleInput" className="form-label">Role</label>
+                        <select
+                            id="roleInput"
+                            name="role"
+                            value={role}
+                            onChange={handleRoleChange}
+                            className="form-select mb-3"
+                            required
+                        >
+                            <option value="">Select Role</option>
+                            <option value="1">Admin</option>
+                            <option value="2">User</option>
+                            <option value="3">Artist</option>
+                        </select>
                     </div>
                     <div className="col-span-12 sm:col-span-12">
                         <label htmlFor="emailInput" className="form-label">Email</label>
@@ -124,4 +143,4 @@ function ProfileModal(props) {
     );
 }
 
-export default ProfileModal;
+export default EditModal;

@@ -1,0 +1,38 @@
+.card {
+    position: relative;
+    background: var(--sidebar-color);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.card .numbers {
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: var(--blue);
+}
+
+.card .cardName {
+    color: var(--black2);
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+.card .iconBx {
+    font-size: 3.5rem;
+    color: var(--black2);
+}
+
+.card:hover {
+    background: var(--blue);
+}
+
+.card:hover .numbers,
+.card:hover .cardName,
+.card:hover .iconBx {
+    color: var(--white);
+}

@@ -2,7 +2,7 @@ import { reducerCases } from "./constants";
 
 export const initialState = {
     userid: 0,
-    songid: 13, 
+    songid: 0, 
 };
 
 const reducer = (state, action) => {

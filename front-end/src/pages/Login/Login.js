@@ -32,7 +32,6 @@ const LoginPage = () => {
             .catch(err => console.log(err));
     };
 
-
     return (
         <>
         <MDBContainer fluid className='p-4 background-radial-gradient overflow-hidden' style={{height: '100vh'}}>

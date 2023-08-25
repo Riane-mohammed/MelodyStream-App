@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
-import ProfileHeader from '../../components/ProfileComponenets/profileHeader/profileHeader';
-import ProfileModal from '../../components/ProfileComponenets/profileBtn/profileBtn';
-import { useStateProvider } from '../../utils/StateProvider';
+import ProfileHeader from '../../../components/ProfileComponenets/profileHeader/profileHeader';
+import ProfileModal from '../../../components/ProfileComponenets/profileBtn/profileBtn';
+import { useStateProvider } from '../../../utils/StateProvider';
 
 const ProfileSection = () => {
     const userid = localStorage.getItem("userId");
@@ -31,10 +31,10 @@ const ProfileSection = () => {
                 <>
                     <ProfileHeader
                         image={user.profileImage ? `http://localhost:8081/uploads/images/profiles/${user.profileImage}` : '../../assets/images/profiles/default.jpg'}
-                        icon={user.Role ? 'bxs-badge-check' : ''}
+                        icon={user.Role === 3 ? 'bxs-badge-check' : ''}
                         name={user.username}
-                        type={user.Role ? 'Artist' : 'Profile'}
-                        subtitle={user.Role ? `10000 monthly listeners` : user.email}
+                        type={user.Role === 3 ? 'Artist' : 'Profile'}
+                        subtitle={user.Role === 3  ? `10000 monthly listeners` : user.email}
                     />
                     <div className='my-5 prfl-btn'>
                         <Button
@@ -51,6 +51,7 @@ const ProfileSection = () => {
                         <ProfileModal
                             show={modalShow}
                             onHide={() => setModalShow(false)}
+                            image={user.profileImage ? `http://localhost:8081/uploads/images/profiles/${user.profileImage}` : '../../assets/images/profiles/default.jpg'}
                         />
                     </div>
                 </>

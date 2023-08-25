@@ -1,32 +1,30 @@
 import React, { useState, useRef, useEffect } from 'react';
-import image from '../../assets/images/music-covers/1.jpg';
-import './Player.css'
-import { useStateProvider } from '../../utils/StateProvider';
+import './Player.css';
 import axios from 'axios';
+import { useStateProvider } from '../../utils/StateProvider';
 
 const Player = (props) => {
-    const { state: { songid }, dispatch } = useStateProvider();
+    const { state } = useStateProvider();
+    const { songid } = state;
     const [song, setSong] = useState({});
-    const songId = songid;
-
-    const audioRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [volume, setVolume] = useState(1);
     const [currentTime, setCurrentTime] = useState(0);
+    const audioRef = useRef(new Audio());
 
     const handlePlayPause = () => {
         if (isPlaying) {
-        audioRef.current.pause();
+            audioRef.current.pause();
         } else {
-        audioRef.current.play();
+            audioRef.current.play();
         }
         setIsPlaying(!isPlaying);
     };
 
-    const handleBack = () => {
+    const handleNext = () => {
     };
 
-    const handleNext = () => {
+    const handleBack = () => {
     };
 
     const handleVolumeChange = (e) => {
@@ -34,6 +32,7 @@ const Player = (props) => {
         audioRef.current.volume = newVolume;
         setVolume(newVolume);
     };
+
 
     const handleTimeUpdate = () => {
         setCurrentTime(audioRef.current.currentTime);
@@ -44,26 +43,47 @@ const Player = (props) => {
         audioRef.current.currentTime = seekTime;
         setCurrentTime(seekTime);
     };
-    
+
     useEffect(() => {
         async function fetchSong() {
             try {
-                const response = await axios.get(`http://localhost:8081/songs/${songId}`);
+                const response = await axios.get(`http://localhost:8081/songs/${songid}`);
                 setSong(response.data);
             } catch (error) {
                 console.error('Error fetching song details:', error);
             }
         }
 
+        if (song.file) {
+            setIsPlaying(true);
+            audioRef.current.pause();
+            audioRef.current.currentTime = 0;
+            audioRef.current.src = `http://localhost:8081/uploads/audios/${song.file}`;
+            
+            audioRef.current.addEventListener('canplaythrough', () => {
+                if (isPlaying) {
+                    audioRef.current.play();
+                }
+            });
+        }
+
+
         fetchSong();
-    }, [songId]);
+    }, [songid]);
+
+    useEffect(() => {
+        audioRef.current.addEventListener('timeupdate', handleTimeUpdate);
+        return () => {
+            audioRef.current.removeEventListener('timeupdate', handleTimeUpdate);
+        };
+    }, []);
 
     return (
         <div className="music-player rounded-bottom">
-        <img src={image} alt="Music cover" />
+        <img src={`http://localhost:8081/uploads/images/MusicCover/${song.Image}`} alt="Music cover" />
         <div className="music-infoPlayer">
             <p className="music-name">{song.title}</p>
-            <p className="artist">{song.artist}</p>
+            <p className="artist">{song.username}</p>
         </div>
         <audio
             ref={audioRef}

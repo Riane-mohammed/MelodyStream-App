@@ -1,15 +1,15 @@
 import React from 'react'
 import './ArtistPage.css'
-import image from '../../assets/images/profiles/1.jpg'
-import ArtHeader from '../../components/Artistcomponents/ArtHeader/ArtHeader'
-import BtnCircle from '../../components/buttons/btn-circle/btn-circle';
-import MusicInfo from '../../components/musicInfo/musicInfo';
-import MusicCard from '../../components/Cards/MusicCard/MusicCard';
-import img1 from '../../assets/images/music-covers/1.jpg'
-import img2 from '../../assets/images/music-covers/2.jpg'
-import img3 from '../../assets/images/music-covers/3.jpg'
-import img4 from '../../assets/images/music-covers/4.jpg'
-import img5 from '../../assets/images/music-covers/5.jpg'
+import image from '../../../assets/images/profiles/1.jpg'
+import ArtHeader from '../../../components/Artistcomponents/ArtHeader/ArtHeader'
+import BtnCircle from '../../../components/buttons/btn-circle/btn-circle';
+import MusicInfo from '../../../components/musicInfo/musicInfo';
+import MusicCard from '../../../components/Cards/MusicCard/MusicCard';
+import img1 from '../../../assets/images/music-covers/1.jpg'
+import img2 from '../../../assets/images/music-covers/2.jpg'
+import img3 from '../../../assets/images/music-covers/3.jpg'
+import img4 from '../../../assets/images/music-covers/4.jpg'
+import img5 from '../../../assets/images/music-covers/5.jpg'
 
 
 function ArtistPage() {

@@ -1,26 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css'
-import MusicCard from '../../components/Cards/MusicCard/MusicCard'
-import Recently from '../../assets/images/playlist-covers/recently-played.png'
-import img1 from '../../assets/images/music-covers/1.jpg'
-import img2 from '../../assets/images/music-covers/2.jpg'
-import img3 from '../../assets/images/music-covers/3.jpg'
-import img4 from '../../assets/images/music-covers/4.jpg'
-import img5 from '../../assets/images/music-covers/5.jpg'
-import ArtistCard from '../../components/Cards/ArtistCard/ArtistCard'
-import edSheeran from '../../assets/images/profiles/1.jpg'
-import ArianaGrande from '../../assets/images/profiles/2.jpg'
-import Rihanna from '../../assets/images/profiles/4.jpg'
-import brunoMars from '../../assets/images/profiles/3.jpg'
-import travisScott from '../../assets/images/profiles/5.jpg'
-import play1 from '../../assets/images/playlist-covers/play1.jpg'
-import play2 from '../../assets/images/playlist-covers/play2.jpg'
-import play3 from '../../assets/images/playlist-covers/play3.jpg'
-import play4 from '../../assets/images/playlist-covers/play4.jpg'
-import play5 from '../../assets/images/playlist-covers/play5.jpg'
+import MusicCard from '../../../components/Cards/MusicCard/MusicCard'
+import Recently from '../../../assets/images/playlist-covers/recently-played.png'
+import ArtistCard from '../../../components/Cards/ArtistCard/ArtistCard'
+import edSheeran from '../../../assets/images/profiles/1.jpg'
+import ArianaGrande from '../../../assets/images/profiles/2.jpg'
+import Rihanna from '../../../assets/images/profiles/4.jpg'
+import brunoMars from '../../../assets/images/profiles/3.jpg'
+import travisScott from '../../../assets/images/profiles/5.jpg'
+import play1 from '../../../assets/images/playlist-covers/play1.jpg'
+import play2 from '../../../assets/images/playlist-covers/play2.jpg'
+import play3 from '../../../assets/images/playlist-covers/play3.jpg'
+import play4 from '../../../assets/images/playlist-covers/play4.jpg'
+import play5 from '../../../assets/images/playlist-covers/play5.jpg'
 
 
 function Home() {
+    const [songs, setSongs] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:8081/songs')
+            .then(response => response.json())
+            .then(data => setSongs(data))
+            .catch(error => console.error('Error fetching data:', error));
+    }, []);
+    const firstFiveSongs = songs.slice(0, 5);
+    console.log(firstFiveSongs)
 
     return (
         <div className='Home'>
@@ -31,11 +36,11 @@ function Home() {
             <div className='Home-section'>
                 <h3>Popular Songs</h3>
                 <div className='d-flex justify-content-between'>
-                    <MusicCard image={img1} title='On My Way' subtitle='Alan Walker' />
-                    <MusicCard image={img2} title='Fade' subtitle='Alan Walker' />
-                    <MusicCard image={img3} title='Cartoon On & On' subtitle=' Daniel Levi' />
-                    <MusicCard image={img4} title='Warriyo' subtitle='Mortals' />
-                    <MusicCard image={img5} title='Gazi' subtitle='Ertugrul' />
+                    {firstFiveSongs.map(song => (
+                        <div key={song.song_id}>
+                            <MusicCard image={`http://localhost:8081/uploads/images/MusicCover/${song.Image}`} title={song.title} subtitle={song.username} songId={song.song_id} />
+                        </div>
+                    ))}
                 </div>
             </div>
             <div className='Home-section'>
