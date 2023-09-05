@@ -1,0 +1,122 @@
+.bottomPage {
+    height: 150px;
+}
+
+.MyLibrary {
+    overflow: auto;
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    background: var(--sidebar-color);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cardHeader ul li h3{
+    font-weight: 600;
+    color: var(--blue);
+    margin: 0 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px 25px;
+    transition: all 0.3s ease;
+}
+
+.cardHeader .btn {
+    position: relative;
+    padding: 5px 10px;
+    background: var(--blue);
+    text-decoration: none;
+    color: var(--sidebar-color);
+    border-radius: 6px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table thead td {
+    font-weight: 600;
+}
+
+.MyLibrary table tr {
+    color: var(--text-color);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.MyLibrary table tr img {
+    width: 35px;
+    border-radius: 25px;
+}
+
+.MyLibrary table tr:last-child {
+    border-bottom: none;
+}
+
+.MyLibrary table tbody tr:hover {
+    background: var(--blue);
+    color: var(--sidebar-color);
+}
+
+.MyLibrary table tr td {
+    padding: 10px;
+}
+
+.MyLibrary table tr td:last-child {
+    text-align: end;
+}
+
+.MyLibrary table tr td:nth-child(2) {
+    text-align: end;
+}
+
+.MyLibrary table tr td:nth-child(3) {
+    text-align: center;
+}
+
+.active-section{
+box-shadow:
+        inset -4px -4px 6px 0 rgba(255, 255, 255, .2),
+        inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+}
+
+@media (max-width : 768px) {
+.MyLibrary {
+    margin-left:20px !important;
+    margin-right:20px !important;
+}
+table {
+    min-width: 500px !important;
+    overflow-x: auto;
+}
+.cardHeader ul {
+        margin: 0;
+        padding: 10px 0px !important;
+    }
+.cardHeader ul li h3 {
+    font-size: 20px;
+    }
+.search{
+    margin: 0 !important;
+}
+}
+@media (max-width : 576px) {
+    .cardHeader ul li h3 {
+        font-size: 15px;
+    }
+    .search .search-box input{
+        font-size: 12px !important;
+    }
+    .search .search-box i{
+        font-size: 12px !important;
+    }
+}

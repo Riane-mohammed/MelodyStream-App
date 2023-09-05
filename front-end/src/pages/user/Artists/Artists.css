@@ -1,0 +1,16 @@
+.AllArtists {
+    min-height: 100vh;
+}
+
+.AllArtists h1 {
+    color: var(--blue);
+    font-weight: 800;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
+    gap: 20px;
+    max-width: 100%;
+    margin: 50px 40px;
+}

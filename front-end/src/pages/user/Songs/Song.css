@@ -1,0 +1,24 @@
+.AllSongs{
+    min-height: 100vh;
+}
+
+.AllSongs h1 {
+    color: var(--blue);
+    font-weight: 800;
+}
+
+.select-box {
+    border-radius: 6px;
+    background-color: var(--primary-color-light);
+    cursor: pointer;
+    transition: var(--tran-05);
+    width: 25%;
+}
+
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
+    gap: 20px;
+    max-width: 100%;
+    margin: 50px 40px;
+}

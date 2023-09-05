@@ -18,13 +18,6 @@ function NavFooter() {
 
     return (
         <div className="bottom-content">
-            {/* <li>
-                <a href="#">
-                    <i className="bx bx-log-out icon"></i>
-                    <span className="text nav-text">Logout</span>
-                </a>
-            </li> */}
-
             <li className="mode" onClick={toggleDarkMode}>
                 <div className="sun-moon">
                     <i className={`bx ${!isDarkMode ? 'bx-sun' : 'bx-moon'} icon`} />

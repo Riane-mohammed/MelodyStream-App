@@ -6,14 +6,9 @@ function NavHeader() {
     return (
         <header>
             <div className="image-text">
-            <span className="image">
-                <img src={logo} />
-            </span>
-
-            <div className="text logo-text">
-                <span className="name">MelodyStream</span>
-                <span className="comment">RMR Platform</span>
-            </div>
+                <span className="imageuser">
+                    <img src={logo} />
+                </span>
             </div>
         </header>
     )

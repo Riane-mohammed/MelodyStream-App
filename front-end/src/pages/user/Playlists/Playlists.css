@@ -1,0 +1,54 @@
+.AllPlaylists {
+    min-height: 100vh;
+}
+
+.AllPlaylists h1 {
+    color: var(--blue);
+    font-weight: 800;
+}
+
+.select-box {
+    border-radius: 6px;
+    background-color: var(--primary-color-light);
+    cursor: pointer;
+    transition: var(--tran-05);
+    width: 25%;
+}
+
+.select-box .select__control {
+    border: none;
+    background-color: var(--primary-color-light);
+    box-shadow: none;
+}
+
+.select-box .select__control--is-focused {
+    border: none;
+    box-shadow: none;
+}
+
+.select-box .select__menu {
+    background-color: var(--primary-color-light);
+    color: var(--text-color);
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: 500;
+    transition: var(--tran-05);
+}
+
+.select-box .select__option {
+    cursor: pointer;
+    transition: var(--tran-05);
+}
+
+.select-box .select__option--is-selected {
+    background-color: var(--primary-color-dark);
+    color: white;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
+    gap: 20px;
+    max-width: 100%;
+    margin: 50px 40px;
+}

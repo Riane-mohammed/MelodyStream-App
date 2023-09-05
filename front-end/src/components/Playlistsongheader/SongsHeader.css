@@ -1,0 +1,9 @@
+.songsHeader{
+    margin: 0 50px;
+    border-bottom: 2px solid var(--text-color);
+}
+
+.songsHeader p{
+    color: var(--text-color);
+    font-weight: 500;
+}

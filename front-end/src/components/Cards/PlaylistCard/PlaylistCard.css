@@ -1,0 +1,108 @@
+.PlaylistCard {
+    padding: 20px;
+    width: 205px;
+    height: 282px;
+    border-radius: 20px;
+    background-color: var(--sidebar-color);
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.PlaylistCard:hover {
+    translate: 0 -10px;
+}
+
+.PlaylistCard-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 15px 0 0 5px;
+}
+
+.PlaylistCard-image {
+    min-height: 170px;
+}
+
+.PlaylistCard-image img {
+    max-width: 100%;
+    border-radius: 20px;
+}
+
+
+.PlaylistCard-body {
+    margin: 0 0 0 10px;
+    padding: 0;
+    color: var(--text-color);
+    font-size: 15px;
+}
+
+@media (max-width : 992px) {
+    .PlaylistCard {
+        padding: 15px;
+        width: 160px;
+        height: 210px;
+        margin-right: 15px;
+    }
+
+    .PlaylistCard-title {
+        font-size: 15px;
+        font-weight: 600;
+        margin: 0px !important;
+        margin-top: 5px !important;
+    }
+
+    .PlaylistCard-body {
+        font-size: 13px;
+    }
+
+    .PlaylistCard-image {
+        min-height: 100px;
+    }
+}
+
+@media (max-width : 768px) {
+    .PlaylistCard {
+        padding: 10px;
+        width: 120px;
+        height: 170px;
+        margin-right: 15px;
+    }
+
+    .PlaylistCard-title {
+        font-size: 12px;
+        font-weight: 600;
+        margin: 0px !important;
+        margin-top: 5px !important;
+    }
+
+    .PlaylistCard-body {
+        font-size: 10px;
+    }
+
+    .PlaylistCard-image {
+        min-height: 100px;
+    }
+}
+
+@media (max-width : 576px) {
+    .PlaylistCard {
+        padding: 8px;
+        width: 100px;
+        height: 150px;
+        margin-left: 35px;
+    }
+
+    .PlaylistCard-title {
+        font-size: 12px;
+        font-weight: 600;
+        margin: 0px !important;
+    }
+
+    .PlaylistCard-body {
+        font-size: 10px;
+    }
+
+    .PlaylistCard-image {
+        min-height: 90px;
+    }
+}

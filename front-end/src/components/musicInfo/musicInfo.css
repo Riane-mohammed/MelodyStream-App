@@ -12,4 +12,18 @@
 
 .music-info:hover{
     background-color: var(--primary-color);
+    color: white;
+}
+
+@media (max-width : 768px) {
+    .music-info{
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+
+@media (max-width : 576px) {
+    .music-info {
+        font-size: 11px;
+        }
 }

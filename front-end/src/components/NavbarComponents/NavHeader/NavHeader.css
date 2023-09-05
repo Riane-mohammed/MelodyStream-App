@@ -1,36 +1,30 @@
-.sidebar header {
+header {
     position: relative;
 }
 
-.sidebar header .image-text {
-    display: flex;
-    align-items: center;
-}
-
-.sidebar header .logo-text {
-    display: flex;
-    flex-direction: column;
-}
-
-header .image-text .name {
-    margin-top: 2px;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-header .image-text .comment {
-    font-size: 16px;
-    margin-top: -2px;
-    display: block;
-}
-
-.sidebar header .image {
+header .imageuser {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 250px;
 }
 
-.sidebar header .image img {
-    width: 40px;
+header .imageuser img {
+    max-width: 100%;
     border-radius: 6px;
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        width: 85px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .imageuser {
+        display: none !important;
+    }
+    .menu {
+        margin-top: 0 !important ;
+    }
 }

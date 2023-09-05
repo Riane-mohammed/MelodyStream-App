@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const ArtistCard = (props) => {
     return (
-        <Link to='ArtistPage'>
+        <Link to={`/Artist/${props.artistId}`}>
             <div className="ArtistCard">
                 <div className="ArtistCard-image">
                     <img src={props.image} className='rounded-circle' />

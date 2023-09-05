@@ -25,7 +25,7 @@ function NavHeaderAdmin() {
     return (
         <header>
             <div className="image-text">
-            <span className="image">
+            <span className="imageAdmin">
                 <img src={loading ? '../../assets/images/profiles/default.jpg' : `http://localhost:8081/uploads/images/profiles/${user.profileImage}`} alt="" />
             </span>
 

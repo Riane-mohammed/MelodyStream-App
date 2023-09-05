@@ -2,5 +2,18 @@
     height: 150px;
 }
 .artist-content h1{
-    color: var(--text-color);
+    color: var(--blue);
+    font-weight: 800;
 }
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
+    gap: 20px;
+    max-width: 100%;
+    margin: 50px 40px;
+}
+
+.play-container{
+    margin-left: 50px !important;
+}
+

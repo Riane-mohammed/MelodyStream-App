@@ -1,0 +1,23 @@
+.FollowingArtistPage-content {
+    background-color: var(--artistContent-color);
+    border-radius: 25px;
+    margin: 0 25px;
+    padding: 25px 0;
+}
+
+.bottomPage {
+    height: 150px;
+}
+
+.FollowingArtistPage-content h1 {
+    color: var(--blue);
+    font-weight: 800;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
+    gap: 20px;
+    max-width: 100%;
+    margin: 50px 40px;
+}

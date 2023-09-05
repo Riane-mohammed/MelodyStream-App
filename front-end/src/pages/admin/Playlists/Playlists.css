@@ -1,0 +1,74 @@
+.playlists {
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    background: var(--sidebar-color);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cardHeader h2 {
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.cardHeader .btn {
+    position: relative;
+    padding: 5px 10px;
+    background: var(--blue);
+    text-decoration: none;
+    color: var(--sidebar-color);
+    border-radius: 6px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table thead td {
+    font-weight: 600;
+}
+
+.playlists table tr {
+    color: var(--text-color);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.playlists table tr img {
+    width: 35px;
+    border-radius: 25px;
+}
+
+.playlists table tr:last-child {
+    border-bottom: none;
+}
+
+.playlists table tbody tr:hover {
+    background: var(--blue);
+    color: var(--sidebar-color);
+}
+
+.playlists table tr td {
+    padding: 10px;
+}
+
+.playlists table tr td:last-child {
+    text-align: end;
+}
+
+.playlists table tr td:nth-child(2) {
+    text-align: end;
+}
+
+.playlists table tr td:nth-child(3) {
+    text-align: center;
+}

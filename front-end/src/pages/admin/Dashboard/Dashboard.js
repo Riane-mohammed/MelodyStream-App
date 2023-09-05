@@ -10,6 +10,20 @@ const Dashboard = () => {
     const [playlistCount, setPlaylistCount] = useState(0);
     const [users, setUsers] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [orders, setOrders] = useState();
+    const [LoadingOrders, setLoadingOrders] = useState(true);
+    
+    useEffect(() => {
+        axios.get('http://localhost:8081/orders')
+            .then(response => {
+                setOrders(response.data);
+                setLoadingOrders(false);
+            })
+            .catch(error => {
+                console.error('Error fetching users:', error);
+                setLoadingOrders(false);
+            });
+    }, []);
 
     useEffect(() => {
         axios.get('http://localhost:8081/users')
@@ -60,7 +74,7 @@ const Dashboard = () => {
     }, []);
     
     useEffect(() => {
-        axios.get('http://localhost:8081//PlaylistsNumber')
+        axios.get('http://localhost:8081/PlaylistsNumber')
             .then(response => {
                 setPlaylistCount(response.data[0]['COUNT(*)']);
                 setLoading(false);
@@ -70,6 +84,7 @@ const Dashboard = () => {
                 setLoading(false);
             });
     }, []);
+
     const recentUsers = loading ? [] : users.slice(0, 8);
 
     return (
@@ -83,41 +98,43 @@ const Dashboard = () => {
                     <CardDash number={playlistCount} title='PlayLists' icon='bxs-playlist' />
                 </div>
                 {/* ================ Order Details List ================= */}
-                <div className="details">
-                    <div className="recentOrders">
-                        <div className="cardHeader">
-                            <h2>Recent Orders</h2>
-                            <a href="#" className="btn">View All</a>
-                        </div>
+            <div className="details">
+        {!LoadingOrders ?(
+        <div className="recentOrders">
+            <div className="cardHeader">
+                <h2>Orders</h2>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <td className='text-start'>Name</td>
+                        <td className='text-center'>Date</td>
+                        <td className='text-center'>Actions</td>
+                    </tr>
+                </thead>
 
-                        <table>
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td className='text-center'>Date</td>
-                                    <td>Status</td>
+                <tbody>
+                    {
+                            orders.map((order) =>
+                                <tr key={order.orderId}>
+                                    <td>{order.username}</td>
+                                    <td className='text-center'>{order.Created_at.substring(0, 10)}</td>
+                                    <td className='d-flex justify-content-center my-auto align-items-center'>
+                                        {order.state === 0 ? (
+                                            <span className="status inProgress">in progress</span>
+                                        ) : order.state === 1 ? (
+                                            <span className="status return">Declined</span>
+                                            ) : (
+                                            <span className="status delivered">Accepted</span>
+                                        ) }
+                                    </td>
                                 </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>Alan Walker</td>
-                                    <td className='text-center'>15-08-2003</td>
-                                    <td><span className="status delivered">Accepted</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Mohammed Reda</td>
-                                    <td className='text-center'>15-08-2003</td>
-                                    <td><span className="status inProgress">in progress</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Reda Ryan</td>
-                                    <td className='text-center'>15-08-2003</td>
-                                    <td><span className="status return">Declined</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                            )
+                        }
+                </tbody>
+            </table>
+                </div>
+        ):''}
 
                     <div className="recentUsers">
                         <div className="cardHeader">

@@ -3,6 +3,7 @@
     background-color: var(--primary-color-light);
     position: relative;
     transition: var(--tran-05);
+    bottom: 35px;
 }
 
 .menu-bar .mode .sun-moon {
@@ -58,4 +59,25 @@ body.dark .mode .sun-moon i.moon {
     transform: translateY(-50%);
     background-color: var(--sidebar-color);
     transition: var(--tran-04);
+}
+
+@media (max-width: 992px) {
+    .sun-moon {
+        display: none !important;
+    }
+    .mode-text {
+        display: none !important;
+    }
+}
+@media (max-width: 768px) {
+    .sun-moon {
+        display: block !important;
+    }
+    .bottom-content{
+        margin-top: 55px !important;
+    }
+    .mode-text {
+        display: block !important;
+        font-size: 10px !important;
+    }
 }

@@ -1,0 +1,15 @@
+.btnSquare{
+    background: transparent;
+    color: var(--text-color);
+    font-weight: 500;
+    border: 1px solid var(--primary-color);
+    padding: 5px 25px;
+    border-radius: 25px;
+    transition: 0.2s;
+}
+
+.btnSquare:hover{
+    background-color: var(--primary-color);
+    color: white;
+    padding: 7px 27px;
+}

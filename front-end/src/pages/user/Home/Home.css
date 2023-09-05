@@ -1,10 +1,58 @@
 .Home{
-    height: 1500px;
+    min-height: 100vh;
 }
+
+.Home h3{
+    color: var(--blue);
+    font-weight: 800;
+}
+
 .Home-section{
     margin:20px ;
+    margin-bottom: 50px;
 }
-.Home-section h3 {
-    color: var(--text-color) !important;
-    margin-bottom: 20px;
+
+.Home-section h2 {
+    margin-bottom: 25px;
+    color: var(--blue);
+    font-weight: 600;
+}
+
+.s-more p{
+    color: var(--text-color);
+    margin-top: 1px !important;
+    font-weight: 600;
+}
+
+.bottomHomePage{
+    height: 40px;
+}
+
+
+@media (max-width : 992px) {
+
+.card-container {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)) !important;
+    }
+    
+}
+
+@media (max-width : 768px) {
+
+.card-container {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)) !important;
+    }
+    
+}
+
+@media (max-width : 576px) {
+
+.card-container {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)) !important;
+        margin: 10px 10px !important;
+    }
+.s-more{
+    margin-top: 0px !important;
+    margin-right: 0px !important;
+}
 }

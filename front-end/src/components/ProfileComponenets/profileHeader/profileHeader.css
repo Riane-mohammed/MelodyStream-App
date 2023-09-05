@@ -6,10 +6,12 @@
 
 .image {
     width: 300px;
+    height: 300px;
 }
 
 .image img {
     max-width: 100%;
+    max-height: 100%;
     border-radius: 50%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -30,7 +32,7 @@
 
 .custom-shape-divider-bottom-1691631882 {
     position: absolute;
-    bottom: 125px;
+    bottom: 190px;
     left: 0;
     width: 100%;
     overflow: hidden;
@@ -47,4 +49,104 @@
 
 .custom-shape-divider-bottom-1691631882 .shape-fill {
     fill: var(--profile-fill);
+}
+
+@media (max-width: 1150px) {
+    .sideContent h1 {
+        font-size: 70px !important;
+    }
+
+    .sideContent p {
+        font-size: 18px !important;
+        font-weight: 500 !important;
+    }
+
+    .image {
+        width: 250px !important;
+        height: 250px !important;
+    }
+
+    .custom-shape-divider-bottom-1691631882 {
+        bottom: 240px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .sideContent h1 {
+            font-size: 60px !important;
+        }
+    
+        .sideContent p {
+            font-size: 15px !important;
+            font-weight: 500 !important;
+        }
+    
+        .image {
+            width: 220px !important;
+            height: 220px !important;
+        }
+    
+        .custom-shape-divider-bottom-1691631882 {
+            bottom: 270px !important;
+        }
+}
+
+@media (max-width: 768px) {
+    .sideContent h1 {
+            font-size: 55px !important;
+        }
+    
+        .sideContent p {
+            font-size: 13px !important;
+            font-weight: 500 !important;
+        }
+    
+        .image {
+            width: 200px !important;
+            height: 200px !important;
+        }
+    
+        .custom-shape-divider-bottom-1691631882 {
+            bottom: 290px !important;
+        }
+}
+
+@media (max-width: 576px) {
+    .sideContent h1 {
+            font-size: 50px !important;
+        }
+    
+        .sideContent p {
+            font-size: 10px !important;
+            font-weight: 500 !important;
+        }
+    
+        .image {
+            width: 150px !important;
+            height: 150px !important;
+        }
+    
+        .custom-shape-divider-bottom-1691631882 {
+            bottom: 340px !important;
+        }
+}
+
+@media (max-width: 420px) {
+    .sideContent h1 {
+            font-size: 45px !important;
+        }
+    
+        .sideContent p {
+            font-size: 10px !important;
+            font-weight: 500 !important;
+        }
+    
+        .image {
+            width: 120px !important;
+            height: 90px !important;
+        }
+    
+        .custom-shape-divider-bottom-1691631882 {
+            bottom: 530px !important;
+        }
 }

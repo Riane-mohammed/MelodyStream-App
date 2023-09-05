@@ -27,14 +27,6 @@ function TopbarDash() {
                 <i className='bx bx-menu'></i>
             </div>
 
-            <div className="search">
-                <label className="search-label">
-                    <input type="text" placeholder="Search here" />
-                    <i className='bx bx-search'></i>
-                </label>
-            </div>
-
-
             <div className="user">
                 <img src={loading ? '../../assets/images/profiles/default.jpg' : `http://localhost:8081/uploads/images/profiles/${user.profileImage}`} alt="" />
             </div>

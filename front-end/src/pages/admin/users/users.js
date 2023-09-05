@@ -4,8 +4,10 @@ import axios from 'axios';
 import EditModal from '../../../components/editModal/EditModal';
 
 const Users = () => {
+    const [searchQuery, setSearchQuery] = useState('');
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [displayedUsers, setDisplayedUsers] = useState([]);
     const [editModalShow, setEditModalShow] = useState(false);
     const [selectedUserId, setSelectedUserId] = useState(null);
 
@@ -23,6 +25,7 @@ const Users = () => {
         axios.get('http://localhost:8081/Allusers')
             .then(response => {
                 setUsers(response.data);
+                setDisplayedUsers(response.data);
                 setLoading(false);
             })
             .catch(error => {
@@ -47,12 +50,30 @@ const Users = () => {
     console.log(users)
     const AllUsers = loading ? [] : users;
 
+    const handleSearchChange = event => {
+        setSearchQuery(event.target.value);
+        const filteredUsers = users.filter(
+            user => user.username.toLowerCase().includes(event.target.value.toLowerCase())
+        );
+        setDisplayedUsers(filteredUsers);
+    };
+
     return (
         <div className="users my-5">
             <div className="cardHeader">
                 <h2>Users</h2>
             </div>
-
+            <div className='ms-3 ms-sm-5'>
+                <li className="search-box">
+                    <i className="bx bx-search icon"></i>
+                    <input
+                        type="text"
+                        placeholder="Search ..."
+                        value={searchQuery}
+                        onChange={handleSearchChange}
+                    />
+                </li>
+            </div>
             <table>
                 <thead>
                     <tr>
@@ -68,7 +89,7 @@ const Users = () => {
 
                 <tbody>
                     {
-                            AllUsers.map((user) =>
+                            displayedUsers.map((user) =>
                                 <tr key={user.id}>
                                     <td><img src={`http://localhost:8081/uploads/images/profiles/${user.profileImage}`} alt={user.username} /></td>
                                     <td className='text-start'>{user.username}</td>

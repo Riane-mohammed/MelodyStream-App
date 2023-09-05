@@ -11,11 +11,12 @@
     --body-color: #f4f6fc;
     --content-bg-color:#E4E9F7;
     --sidebar-color: #FFF;
+    --artistContent-color: #f5f5f5;
     --bar-color:#FFF;
-    --primary-color: #8AC7DB;
+    --primary-color: #619cd0;
     --primary-color-light: #F6F5FF;
     --toggle-color: #DDD;
-    --text-color: #707070;
+    --text-color: #303030;
     --text-color-black: #000000;
     --text-color-fix: #707070;
     --gradient-top: #fff;
@@ -29,7 +30,7 @@
     --gray: #f5f5f5;
     --black1: #222;
     --black2: #999;
-
+    --border-color-nav: #000;
     --tran-01: all 0.2s ease;
 }
 
@@ -47,30 +48,51 @@ body {
 body.dark {
     --body-color: #000000;
     --sidebar-color: #242526;
+    --artistContent-color: #383838;
     --content-bg-color: #18191a;
     --bar-color: #242526;
     --primary-color: #3a3b3c;
     --primary-color-light: #3a3b3c;
     --toggle-color: #fff;
-    --text-color: #ccc;
+    --text-color: #fff;
     --text-color-black: #e3e3e3;
+    --text-color-fix: #ffffff;
     --gradient-top: #242526;
-    --gradient-middle: #cccccc;
-    --gradient-bottom: #e4e9f7;
+    --gradient-middle: hsla(0, 0%, 100%, 0.4);
+    --gradient-bottom: hsla(0, 0%, 100%, 0.4);
     --profile-color: #292929;
     --profile-fill: #18191a;
     --border-color:#18191a;
+    --border-color-nav: #fff;
 }
 
 .content {
     position: absolute;
     top: 7px;
     left: 266px;
+    min-height: 93vh;
     width: calc(100% - 274px);
     background-color: var(--content-bg-color);
     transition: var(--tran-05);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+}
+
+@media (max-width: 992px) {
+    .content {
+        width: calc(100% - 109px) !important;
+        left: 101px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        width: 100% !important;
+        left: 0;
+        top: 0;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
 }
 
 .content-admin {
@@ -91,4 +113,12 @@ body.dark {
 
 a{
     text-decoration: none;
+}
+
+.navbtn{
+    position: relative;
+    color: black;
+    z-index: 5 !important;
+    margin: 5px 0px 0px 15px;
+    cursor: pointer;
 }

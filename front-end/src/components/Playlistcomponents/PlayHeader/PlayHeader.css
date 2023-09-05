@@ -1,0 +1,98 @@
+.playHeader {
+    padding: 80px 50px;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, var(--gradient-top) 0%, var(--gradient-middle) 50%, var(--gradient-bottom) 100%);
+}
+
+.imagePlay {
+    width: 300px;
+}
+
+.imagePlay img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 25px ;
+}
+.subs .imageProfilePlay {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.subs .imageProfilePlay img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 25px;
+}
+
+.sideContent p,
+.sideContent h1 {
+    color: var(--text-color-fix) !important;
+}
+
+.sideContent h1 {
+    font-size: 80px;
+}
+
+.sideContent p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.subs p{
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.subs span{
+    font-size: 30px;
+    font-weight: 800;
+    margin: 0px 5px 15px;
+}
+
+@media (max-width : 992px) {
+.imagePlay {
+        width: 250px !important;
+    }
+.sideContent h1 {
+    font-size: 50px !important;
+}
+
+.sideContent p {
+    font-size: 14px!important;
+}
+}
+
+@media (max-width : 768px) {
+.imagePlay {
+        width: 200px !important;
+    }
+
+    .sideContent h1 {
+        font-size: 40px !important;
+    }
+
+    .sideContent p {
+        font-size: 12px !important;
+    }
+}
+
+@media (max-width : 576px) {
+.imagePlay {
+        width: 125px !important;
+    }
+
+    .sideContent h1 {
+        font-size: 30px !important;
+    }
+
+    .sideContent p {
+        font-size: 10px !important;
+    }
+    .playHeader {
+        padding: 80px 20px !important;
+    }
+    .subs .imageProfilePlay {
+        width: 30px !important;
+    }
+}

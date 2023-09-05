@@ -3,6 +3,8 @@ import './Songs.css';
 import axios from 'axios';
 
 const Songs = () => {
+    const [searchQuery, setSearchQuery] = useState('');
+    const [displayedSongs, setDisplayedSongs] = useState([]);
     const [songs, setSongs] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -10,6 +12,7 @@ const Songs = () => {
         axios.get('http://localhost:8081/songs')
             .then(response => {
                 setSongs(response.data);
+                setDisplayedSongs(response.data);
                 setLoading(false);
             })
             .catch(error => {
@@ -34,12 +37,29 @@ const Songs = () => {
 
     const AllSongs = loading ? [] : songs;
 
+    const handleSearchChange = event => {
+        setSearchQuery(event.target.value);
+        const filteredSongs = songs.filter(
+            song => song.title.toLowerCase().includes(event.target.value.toLowerCase())
+        );
+        setDisplayedSongs(filteredSongs);
+    };
     return (
         <div className="songs my-5">
             <div className="cardHeader">
                 <h2>Songs</h2>
             </div>
-
+            <div className='ms-3 ms-sm-5 '>
+                <li className="search-box">
+                    <i className="bx bx-search icon"></i>
+                    <input
+                        type="text"
+                        placeholder="Search ..."
+                        value={searchQuery}
+                        onChange={handleSearchChange}
+                    />
+                </li>
+            </div>
             <table>
                 <thead>
                     <tr>
@@ -54,7 +74,7 @@ const Songs = () => {
 
                 <tbody>
                     {
-                            AllSongs.map((song) =>
+                            displayedSongs.map((song) =>
                                 <tr key={song.song_id}>
                                     <td><img src={`http://localhost:8081/uploads/images/MusicCover/${song.Image}`} alt={song.name} /></td>
                                     <td className='text-start'>{song.title}</td>

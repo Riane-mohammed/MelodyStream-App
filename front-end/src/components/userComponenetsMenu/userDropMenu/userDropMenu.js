@@ -63,7 +63,7 @@ const UserDropMenu = () => {
                 style={{ backgroundColor: 'var(--sidebar-color)' }}
             >
                 <SingleUserItem item='Profile' link='profile'/>
-                <SingleUserItem item='Settings'/>
+                <SingleUserItem item='Settings' link='Settings'/>
                 <li>
                     <button  className="dropdown-item" style={{color: 'var(--text-color)' }} onClick={handleLogOut}>
                         Logout
