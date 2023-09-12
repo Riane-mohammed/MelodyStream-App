@@ -13,11 +13,15 @@ const Player = (props) => {
     }, [state.songid]);
 
     const [song, setSong] = useState({});
+    const [songs, setSongs] = useState(null);
+    const [currentSongIndex, setCurrentSongIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
     const [volume, setVolume] = useState(1);
     const [currentTime, setCurrentTime] = useState(0);
     const [loadingSongs, setLoadingSongs] = useState(true);
     const [userLikedSong, setUserLikedSong] = useState(false);
+    const [allSongs, setAllSongs] = useState([]);
+    const { dispatch } = useStateProvider();
     const audioRef = useRef(new Audio());
 
     useEffect(() => {
@@ -32,6 +36,31 @@ const Player = (props) => {
         }
     }, [songid, userid]);
 
+    useEffect(() => {
+        fetch(`http://localhost:8081/songs`)
+            .then(response => response.json())
+            .then(data => {
+                setAllSongs(data);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }, []);
+
+    const fetchSongs = () => {
+        if (userid) {
+            axios.get(`http://localhost:8081/getLastestPlayedSongs/${userid}`)
+                .then(response => {
+                    setSongs(response.data.LatestPlayed);
+                })
+                .catch(error => {
+                    console.error('Error fetching Recently Played:', error);
+                });
+        }
+    };
+
+    useEffect(() => {
+        fetchSongs();
+    }, [userid]);
+
     const handlePlayPause = () => {
         if (isPlaying) {
             audioRef.current.pause();
@@ -42,11 +71,39 @@ const Player = (props) => {
     };
 
     const handleNext = () => {
-        // Implement logic to play the next song.
+        if (!songid) {
+            return;
+        }
+        const filteredSongs = allSongs.filter(song => song.song_id !== songid);
+
+        if (filteredSongs.length > 0) {
+            const randomIndex = Math.floor(Math.random() * filteredSongs.length);
+            const randomSong = filteredSongs[randomIndex];
+            const randomSongId = randomSong.song_id;
+            axios.post(`http://localhost:8081/saveUserSong`, {
+                userId: userid,
+                songId: randomSongId
+            })
+                .then(response => {
+                })
+                .catch(error => {
+                    console.error('Error save song:', error);
+                });
+            dispatch({ type: 'SET_MUSIC_ID', payload: randomSongId });
+            fetchSongs();
+        }
     };
 
     const handleBack = () => {
-        // Implement logic to play the previous song.
+        if (songs.length === 0) {
+            return;
+        }
+        const prevSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+        const prevSong = songs[prevSongIndex];
+        dispatch({ type: 'SET_MUSIC_ID', payload: prevSong.song_id });
+        setCurrentSongIndex(prevSongIndex);
+        fetchSongs();
+
     };
 
     const handleVolumeChange = (e) => {

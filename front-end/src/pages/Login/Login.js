@@ -34,7 +34,7 @@ function LoginPage() {
         formData.append("name", name);
         formData.append("email", emailUp);
         formData.append("password", passwordUp);
-        formData.append("profileImage", profileImage); // Assuming profileImage is a file input
+        formData.append("profileImage", profileImage);
 
         axios.post("http://localhost:8081/signup", formData)
             .then(res => {
@@ -46,6 +46,8 @@ function LoginPage() {
                 }
             })
             .catch(err => console.log(err));
+        
+        window.location.reload();
     };
 
     const toggleForm = () => {

@@ -67,7 +67,7 @@ function ArtistPage() {
     }, [artistId]);
 
     useEffect(() => {
-        axios.get(`http://localhost:8081/ViewsNumber/${userid}`)
+        axios.get(`http://localhost:8081/ViewsNumber/${artistId}`)
             .then(response => {
                 setViewsCount(response.data[0]['views']);
             })

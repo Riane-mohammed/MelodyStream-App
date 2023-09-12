@@ -1,0 +1,18 @@
+.settings h3,
+.settings h2 {
+    color: var(--blue);
+    font-weight: 600;
+}
+.settings p {
+    color: var(--text-color);
+    font-weight: 600;
+}
+.square-list {
+    list-style-type: square !important;
+}
+.settings ul li,
+.settings ol li{
+    color: var(--text-color);
+    font-weight: 600;
+    margin: 0;
+}

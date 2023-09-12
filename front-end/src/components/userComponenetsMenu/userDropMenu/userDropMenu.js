@@ -62,8 +62,10 @@ const UserDropMenu = () => {
                 aria-labelledby="navbarDropdownMenuAvatar"
                 style={{ backgroundColor: 'var(--sidebar-color)' }}
             >
-                <SingleUserItem item='Profile' link='profile'/>
-                <SingleUserItem item='Settings' link='Settings'/>
+                <SingleUserItem item='Profile' link='profile' />
+                { user.Role === 2 ?(
+                    <SingleUserItem item='Settings' link='Settings' />
+                ):''}
                 <li>
                     <button  className="dropdown-item" style={{color: 'var(--text-color)' }} onClick={handleLogOut}>
                         Logout

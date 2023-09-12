@@ -61,7 +61,7 @@ function Home() {
         <div className='Home'>
             <div className='Home-section'>
                     <h2>Recently Played</h2>
-                    <div className='ms-5'>
+                    <div className='ms-0'>
                         <PlaylistCard image={Recently} title='Recently Played' playlistid='Recently-Played' />
                     </div>
             </div>
